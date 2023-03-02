@@ -16,11 +16,13 @@
 
 .calendar-days {
   display: flex;
+  overflowX: 'auto';
   flex-wrap: wrap;
 }
 
 .calendar-day,
 .calendar-pre-day {
+  overflowX: 'auto';
   flex: calc(100% - 0.2rem) 0 0;
   margin: 0.1rem;
   padding: 0.25rem;
