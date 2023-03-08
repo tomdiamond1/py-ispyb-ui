@@ -73,6 +73,26 @@ export default function Default(props: IDataCollection) {
               content: `${item.beamSizeAtSampleX} x ${item.beamSizeAtSampleY}`,
               unit: 'µm',
             },
+             {
+              title: 'Resolution',
+              content: `${item.resolution} x ${item.resolution}`,
+            },
+            {
+              title: 'Transmission',
+              content: `${item.transmission} x ${item.transmission}`,
+            },
+            {
+              title: 'Flux',
+              content: `${item.flux} x ${item.flux}`,
+            },
+            {
+              title: 'OmegaStart',
+              content: `${item.omegaStart} x ${item.omegaStart}`,
+            },
+            {
+              title: 'Overlap',
+              content: `${item.overlap} x ${item.overlap}`,
+            },
           ]}
         />
       </Col>
