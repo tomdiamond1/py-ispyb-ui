@@ -126,6 +126,10 @@ function SessionBeamLineList({
   day: DateTime;
 }) {
   const relevantSessions = sessions.filter((session) => {
+    const valid_beamlines = ["m01","m02","m03","m04","m05","m06", "m07", "m08", "m09", "m10", "m11", "m12", "m13", "m14", "i02", "i02-1", "i02-2", "i03", "i04", "i04-1", "i23"
+    ,"i24", "i11-1", "i11-2", "i11-3", "i11-4", "i11-5", "i11-6", "i11-7", "i11-8", "i11-9", "i11-10", "i11-11", "i11-12"
+    ,"b21", "i22", "i19", "i19-1", "i19-2", "i05", "i06", "i07", "i08", "i08-1", "i10", "i11"
+    ,"k11", "i14", "i15", "i15-1", "i16", "b18", "i18", "i20", "i20-1", "b22"]
     const dayEnd = day.endOf('day');
     const startTime = DateTime.fromISO(session.startDate);
     return startTime >= day && startTime <= dayEnd;
@@ -141,7 +145,9 @@ function SessionBeamLineList({
           <li key={session.sessionId}>
             {sessionStartDate.toFormat('HH:mm')}
             <br />
-            {session.beamLineName}:
+            if (valid_beamlines.includes(session.beamLineName)) {
+                {session.beamLineName}:
+            };
           </li>
         );
       })}
